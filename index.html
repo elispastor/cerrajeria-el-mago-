@@ -98,21 +98,53 @@
             color: #0f172a;
         }
 
-        /* PORTADA */
+        /* ===== PORTADA CON LOGO Y TÍTULO ===== */
         .portada-container {
             width: 100%;
-            height: 280px;
             background: #fbbf24;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
+            padding: 20px 40px;
             border-bottom: 4px solid #0f172a;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
-        .portada-container img {
-            max-width: 100%;
-            max-height: 100%;
+        .logo-area {
+            flex: 1;
+            text-align: center;
+        }
+
+        .logo-area img {
+            max-width: 200px;
+            max-height: 120px;
             object-fit: contain;
+        }
+
+        .titulo-cerrajeria {
+            flex: 1;
+            text-align: center;
+        }
+
+        .titulo-cerrajeria h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #0f172a;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 0 white;
+            letter-spacing: 4px;
+        }
+
+        .titulo-cerrajeria p {
+            font-size: 1.2rem;
+            color: #0f172a;
+            font-weight: 600;
+            background: white;
+            display: inline-block;
+            padding: 5px 30px;
+            border-radius: 40px;
+            margin-top: 10px;
         }
 
         /* DIRECCIÓN Y BOTONES */
@@ -169,7 +201,7 @@
             transform: scale(1.02);
         }
 
-        /* ===== FILOSOFÍA 100% CENTRADA ===== */
+        /* FILOSOFÍA CENTRADA */
         .filosofia {
             padding: 40px 35px;
             background: white;
@@ -308,11 +340,12 @@
         }
 
         @media (max-width: 700px) {
+            .portada-container {
+                flex-direction: column;
+                text-align: center;
+            }
             .grid-servicios {
                 grid-template-columns: repeat(2, 1fr);
-            }
-            .filosofia-item {
-                max-width: 100%;
             }
         }
     </style>
@@ -340,9 +373,15 @@
         </div>
     </header>
 
-    <!-- PORTADA CON IMAGEN -->
+    <!-- PORTADA CON LOGO Y TÍTULO CERRAJERÍA -->
     <div class="portada-container" id="inicio">
-        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCABkAGQDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//2Q==" alt="Servillaves K.S.R.">
+        <div class="logo-area">
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCABkAGQDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//2Q==" alt="Servillaves K.S.R.">
+        </div>
+        <div class="titulo-cerrajeria">
+            <h2>🔐 CERRAJERÍA</h2>
+            <p>Profesional y rápida</p>
+        </div>
     </div>
 
     <!-- DIRECCIÓN -->
@@ -355,7 +394,7 @@
         </div>
     </div>
 
-    <!-- FILOSOFÍA (AHORA 100% CENTRADA) -->
+    <!-- FILOSOFÍA CENTRADA -->
     <div class="filosofia" id="filosofia">
         <h2>🔧 NUESTRA FILOSOFÍA</h2>
         <div class="grid-filosofia">
