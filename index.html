@@ -44,20 +44,6 @@
             align-items: center;
         }
 
-        .logo-empresa {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-empresa img {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
-            border: 3px solid #fbbf24;
-            object-fit: cover;
-        }
-
         .logo-empresa span {
             color: white;
             font-weight: 700;
@@ -112,37 +98,36 @@
             color: #0f172a;
         }
 
-        /* ===== PORTADA CON LOGO ===== */
+        /* ===== PORTADA (AHORA CON FONDO AMARILLO Y TEXTO) ===== */
         .portada-container {
             width: 100%;
-            height: 220px;
-            background: #f8fafc;
+            height: 250px;
+            background: #fbbf24;  /* AMARILLO */
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            border-bottom: 4px solid #fbbf24;
-            position: relative;
-        }
-
-        .portada-container img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .texto-respaldo {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #2563eb;
-            text-shadow: 2px 2px 0 #fbbf24;
-            letter-spacing: 4px;
-        }
-
-        .texto-respaldo small {
-            display: block;
-            font-size: 1.2rem;
+            border-bottom: 4px solid #0f172a;
             color: #0f172a;
-            font-weight: 400;
+            text-align: center;
+        }
+
+        .portada-container h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1;
+            text-shadow: 2px 2px 0 #ffffff;
+        }
+
+        .portada-container p {
+            font-size: 1.8rem;
+            font-weight: 600;
+            background: #0f172a;
+            color: #fbbf24;
+            padding: 8px 30px;
+            border-radius: 50px;
+            margin-top: 15px;
         }
 
         /* DIRECCIÓN Y BOTONES */
@@ -153,8 +138,8 @@
         }
 
         .direccion-impacto {
-            background: #2563eb;
-            color: white;
+            background: #0f172a;
+            color: #fbbf24;
             padding: 12px 25px;
             border-radius: 40px;
             font-size: 1.3rem;
@@ -182,18 +167,17 @@
             align-items: center;
             gap: 8px;
             transition: 0.2s;
+            border: 2px solid #fbbf24;
         }
 
         .btn-wsp {
             background: #25D366;
             color: white;
-            border: 2px solid #fbbf24;
         }
 
         .btn-llamada {
             background: #0f172a;
             color: white;
-            border: 2px solid #fbbf24;
         }
 
         .btn-wsp:hover, .btn-llamada:hover {
@@ -238,7 +222,7 @@
         }
 
         .filosofia-item h3 {
-            color: #2563eb;
+            color: #0f172a;
             font-size: 1.8rem;
             margin-bottom: 15px;
         }
@@ -315,7 +299,7 @@
             width: 140px;
             height: 140px;
             border-radius: 20px;
-            border: 4px solid #2563eb;
+            border: 4px solid #fbbf24;
         }
 
         footer {
@@ -335,6 +319,9 @@
             .grid-filosofia, .grid-servicios {
                 grid-template-columns: 1fr;
             }
+            .portada-container h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
@@ -346,8 +333,6 @@
     <header>
         <div class="nav-container">
             <div class="logo-empresa">
-                <!-- Espacio para su logo (portada.png) -->
-                <img src="portada.png" alt="Logo" onerror="this.style.display='none'">
                 <span>SERVILLAVES K.S.R.</span>
             </div>
             <button class="menu-toggle" id="menuToggle">☰</button>
@@ -363,13 +348,13 @@
         </div>
     </header>
 
-    <!-- PORTADA (con respaldo visible) -->
+    <!-- PORTADA (FONDO AMARILLO - SIEMPRE SE VE) -->
     <div class="portada-container" id="inicio">
-        <!-- Intenta cargar portada.png, si no, muestra texto -->
-        <img src="portada.png" alt="Portada" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'texto-respaldo\'>🔑 SERVILLAVES <small>K.S.R.</small></div>'">
+        <h1>SERVILLAVES</h1>
+        <p>K.S.R.</p>
     </div>
 
-    <!-- DIRECCIÓN CORREGIDA: AVENIDA 5 -->
+    <!-- DIRECCIÓN CORREGIDA -->
     <div class="info-contacto">
         <div class="direccion-impacto">📍 AVENIDA 5 #7-54 CENTRO</div>
         <div class="telefonos-grid">
@@ -385,11 +370,11 @@
         <div class="grid-filosofia">
             <div class="filosofia-item">
                 <h3>🎯 Misión</h3>
-                <p>Brindar soluciones rápidas y profesionales en cerrajería, garantizando la tranquilidad de nuestros clientes con servicios de calidad y precios justos.</p>
+                <p>Brindar soluciones rápidas y profesionales en cerrajería, garantizando la tranquilidad de nuestros clientes.</p>
             </div>
             <div class="filosofia-item">
                 <h3>👁️ Visión</h3>
-                <p>Ser la cerrajería de referencia en el centro de la ciudad, reconocida por nuestra honestidad y tecnología aplicada a la seguridad.</p>
+                <p>Ser la cerrajería de referencia en el centro, reconocida por nuestra honestidad.</p>
             </div>
             <div class="filosofia-item">
                 <h3>⭐ Valores</h3>
