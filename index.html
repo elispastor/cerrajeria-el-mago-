@@ -98,54 +98,53 @@
             color: #0f172a;
         }
 
-        /* ===== PORTADA GRANDE CON SU IMAGEN ===== */
-        .portada-grande {
+        /* ===== PORTADA CON IMAGEN ANIMADA ===== */
+        .portada-con-vida {
             width: 100%;
-            height: 300px;
-            background: #fbbf24;
+            height: 400px;
             position: relative;
             overflow: hidden;
-            border-bottom: 4px solid #0f172a;
+            border-bottom: 4px solid #fbbf24;
         }
 
-        .portada-grande img {
+        .portada-con-vida img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center;
+            animation: zoomSuave 20s infinite alternate ease-in-out;
         }
 
-        .overlay-portada {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, rgba(15,23,42,0.7) 0%, rgba(15,23,42,0.3) 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
+        @keyframes zoomSuave {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        /* ===== BIENVENIDA CON MOVIMIENTO ===== */
+        .bienvenida {
             text-align: center;
+            padding: 40px 20px 20px;
+            background: white;
         }
 
-        .overlay-portada h1 {
-            font-size: 4rem;
+        .bienvenida h2 {
+            font-size: 3rem;
             font-weight: 800;
-            text-shadow: 2px 2px 0 #fbbf24, 4px 4px 0 #0f172a;
+            color: #0f172a;
+            text-transform: uppercase;
             letter-spacing: 4px;
-            margin-bottom: 10px;
+            animation: brillo 2s infinite;
+            display: inline-block;
+            padding: 10px 40px;
+            border-radius: 60px;
+            background: #fbbf24;
+            border: 3px solid #0f172a;
         }
 
-        .overlay-portada p {
-            font-size: 1.8rem;
-            background: #fbbf24;
-            color: #0f172a;
-            padding: 8px 40px;
-            border-radius: 60px;
-            font-weight: 600;
-            border: 3px solid #0f172a;
+        @keyframes brillo {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 #fbbf24; }
+            50% { transform: scale(1.05); box-shadow: 0 0 30px 5px #fbbf24; }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 #fbbf24; }
         }
 
         /* DIRECCIÓN Y BOTONES */
@@ -341,8 +340,11 @@
         }
 
         @media (max-width: 700px) {
-            .overlay-portada h1 {
-                font-size: 2.5rem;
+            .portada-con-vida {
+                height: 250px;
+            }
+            .bienvenida h2 {
+                font-size: 2rem;
             }
             .grid-servicios {
                 grid-template-columns: repeat(2, 1fr);
@@ -373,13 +375,14 @@
         </div>
     </header>
 
-    <!-- PORTADA GRANDE CON SU IMAGEN -->
-    <div class="portada-grande" id="inicio">
-        <img src="portada.jpg" alt="Servillaves K.S.R. - Cerrajería Profesional">
-        <div class="overlay-portada">
-            <h1>SERVILLAVES K.S.R.</h1>
-            <p>🔐 CERRAJERÍA</p>
-        </div>
+    <!-- PORTADA: SOLO LA IMAGEN CON MOVIMIENTO -->
+    <div class="portada-con-vida" id="inicio">
+        <img src="portada.jpg" alt="Servillaves K.S.R.">
+    </div>
+
+    <!-- BIENVENIDA CON MOVIMIENTO -->
+    <div class="bienvenida">
+        <h2>BIENVENIDOS A NUESTRO SITIO</h2>
     </div>
 
     <!-- DIRECCIÓN -->
