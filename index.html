@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servillaves K.S.R. · Cerrajería</title>
+    <title>Servillaves K.S.R. · Cerrajería Profesional</title>
     <style>
         * {
             margin: 0;
@@ -21,16 +21,16 @@
             padding: 20px;
         }
 
-        /* TARJETA PRINCIPAL */
+        /* TARJETA PRINCIPAL CON ENTRADA ANIMADA */
         .tarjeta-digital {
-            max-width: 1000px;
+            max-width: 1100px;
             width: 100%;
             background: #ffffff;
             border-radius: 60px;
             overflow: hidden;
             box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5);
             border: 1px solid #fbbf24;
-            animation: entrada 0.6s ease-out;
+            animation: entrada 0.8s ease-out;
         }
 
         @keyframes entrada {
@@ -128,11 +128,70 @@
             color: #0f172a;
         }
 
-        /* ===== CONTENIDO PRINCIPAL ===== */
+        /* ===== PORTADA CON MOVIMIENTO ===== */
         .hero-cerrajero {
+            position: relative;
+            overflow: hidden;
+            min-height: 300px;
+        }
+
+        .portada-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .portada-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 8s ease;
+            animation: zoomPortada 20s infinite alternate;
+        }
+
+        @keyframes zoomPortada {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .overlay-portada {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .overlay-portada h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 0 #2563eb, 4px 4px 0 #fbbf24;
+            margin-bottom: 10px;
+        }
+
+        .overlay-portada p {
+            font-size: 1.5rem;
+            background: #fbbf24;
+            color: #0f172a;
+            padding: 8px 30px;
+            border-radius: 60px;
+            font-weight: 600;
+        }
+
+        /* DIRECCIÓN Y BOTONES */
+        .info-contacto {
             padding: 30px 35px;
-            background: linear-gradient(145deg, #f8fafc, #ffffff);
-            border-bottom: 4px solid #2563eb;
+            background: #f8fafc;
+            text-align: center;
         }
 
         .direccion-impacto {
@@ -144,7 +203,7 @@
             font-weight: 600;
             display: inline-block;
             border: 2px solid #fbbf24;
-            margin: 20px 0 10px;
+            margin-bottom: 20px;
             animation: rebote 2s infinite;
         }
 
@@ -157,16 +216,17 @@
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
+            justify-content: center;
             margin: 20px 0;
         }
 
         .btn-wsp, .btn-llamada {
-            padding: 15px 25px;
+            padding: 15px 30px;
             border-radius: 60px;
             text-decoration: none;
             font-weight: 700;
             font-size: 1.2rem;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 8px;
             transition: 0.3s;
@@ -194,6 +254,73 @@
             transform: scale(1.05) rotate(-1deg);
         }
 
+        /* MISIÓN, VISIÓN, VALORES */
+        .filosofia {
+            padding: 40px 35px;
+            background: white;
+        }
+
+        .filosofia h2 {
+            color: #0f172a;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 4px solid #fbbf24;
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+
+        .grid-filosofia {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .filosofia-item {
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 30px;
+            text-align: center;
+            border: 2px solid #e2e8f0;
+            transition: 0.3s;
+        }
+
+        .filosofia-item:hover {
+            border-color: #fbbf24;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 25px -10px #2563eb;
+        }
+
+        .filosofia-item h3 {
+            color: #2563eb;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .filosofia-item p {
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .filosofia-item ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .filosofia-item li {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filosofia-item li::before {
+            content: "🔑";
+            color: #fbbf24;
+        }
+
+        /* SERVICIOS */
         .servicios {
             padding: 40px 35px;
             background: #f8fafc;
@@ -201,7 +328,7 @@
 
         .grid-servicios {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 20px;
             margin-top: 20px;
         }
@@ -217,10 +344,10 @@
 
         .servicio-item:hover {
             border-color: #fbbf24;
-            transform: translateY(-8px);
-            box-shadow: 0 15px 25px -10px #2563eb;
+            transform: translateY(-5px);
         }
 
+        /* QR Y CONTACTO */
         .contacto-qr {
             padding: 40px 35px;
             display: flex;
@@ -228,6 +355,7 @@
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 30px;
+            background: white;
         }
 
         .qr-container {
@@ -266,7 +394,7 @@
             height: 200%;
             background: radial-gradient(circle, #fbbf24 0%, transparent 70%);
             opacity: 0.1;
-            animation: girar 15s linear infinite;
+            animation: girar 20s linear infinite;
         }
 
         @keyframes girar {
@@ -286,21 +414,20 @@
 
 <div class="tarjeta-digital">
     
-    <!-- HEADER CON MENÚ HAMBURGUESA -->
+    <!-- MENÚ HAMBURGUESA -->
     <header>
         <div class="nav-container">
             <div class="logo-empresa">
-                <!-- ESPACIO PARA portada.png -->
-                <img src="portada.png" alt="Logo" onerror="this.src='https://via.placeholder.com/60x60?text=LLAVE'">
+                <img src="portada.png" alt="Logo" onerror="this.src='https://via.placeholder.com/60x60?text=🔑'">
                 <span>SERVILLAVES K.S.R.</span>
             </div>
             <button class="menu-toggle" id="menuToggle">☰</button>
         </div>
 
-        <!-- MENÚ DESPLEGABLE -->
         <div class="menu-desplegable" id="menuDesplegable">
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#filosofia">Filosofía</a></li>
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#contacto">Contacto</a></li>
                 <li><a href="https://wa.me/5731676227333?text=Quiero%20mi%20tarjeta%20como%20la%20de%20Servillaves" target="_blank" style="background: #fbbf24; color: #0f172a; font-weight: bold;">🔑 Quiero mi tarjeta</a></li>
@@ -308,31 +435,63 @@
         </div>
     </header>
 
-    <!-- HERO CON DIRECCIÓN Y TELÉFONOS -->
+    <!-- PORTADA CON MOVIMIENTO -->
     <div class="hero-cerrajero" id="inicio">
-        <div class="direccion-impacto">
-            📍 AVENIDA S #7-54 CENTRO
+        <div class="portada-container">
+            <img src="portada.png" alt="Portada" onerror="this.src='https://via.placeholder.com/800x300?text=Cerrajería+Profesional'">
+            <div class="overlay-portada">
+                <h1>SERVILLAVES K.S.R.</h1>
+                <p>🔐 Cerrajería y Ferretería</p>
+            </div>
         </div>
+    </div>
 
+    <!-- DIRECCIÓN Y TELÉFONOS -->
+    <div class="info-contacto">
+        <div class="direccion-impacto">📍 AVENIDA S #7-54 CENTRO</div>
         <div class="telefonos-grid">
             <a href="tel:+5732416744" class="btn-llamada">📞 324 1674</a>
             <a href="tel:+5731676227333" class="btn-llamada">📞 316 7622 7333</a>
-            <a href="https://wa.me/5731676227333?text=Hola%2C%20necesito%20información%20sobre%20cerrajería." class="btn-wsp" target="_blank">📱 WhatsApp</a>
+            <a href="https://wa.me/5731676227333?text=Hola%2C%20necesito%20información" class="btn-wsp">📱 WhatsApp</a>
         </div>
+    </div>
 
-        <p style="color:#0f172a; font-size:1.2rem; margin-top:20px;">🔧 <strong>Cerrajería y Ferretería</strong> · Seguridad y confianza</p>
+    <!-- MISIÓN, VISIÓN, VALORES -->
+    <div class="filosofia" id="filosofia">
+        <h2>🔧 NUESTRA FILOSOFÍA</h2>
+        <div class="grid-filosofia">
+            <div class="filosofia-item">
+                <h3>🎯 Misión</h3>
+                <p>Brindar soluciones rápidas, seguras y profesionales en cerrajería y ferretería, garantizando la tranquilidad de nuestros clientes con servicios de calidad y precios justos.</p>
+            </div>
+            <div class="filosofia-item">
+                <h3>👁️ Visión</h3>
+                <p>Ser la cerrajería de referencia en el centro de la ciudad, reconocida por nuestra honestidad, rapidez y tecnología aplicada a la seguridad.</p>
+            </div>
+            <div class="filosofia-item">
+                <h3>⭐ Valores</h3>
+                <ul>
+                    <li><strong>Honestidad:</strong> En cada diagnóstico y presupuesto</li>
+                    <li><strong>Rapidez:</strong> Llegamos en minutos</li>
+                    <li><strong>Profesionalismo:</strong> Técnicos capacitados</li>
+                    <li><strong>Confianza:</strong> Garantía en todos los trabajos</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <!-- SERVICIOS -->
     <div class="servicios" id="servicios">
-        <h2 style="color:#0f172a;">🔨 Nuestros servicios</h2>
+        <h2 style="color:#0f172a; font-size:2.2rem;">🔨 SERVICIOS ESPECIALIZADOS</h2>
         <div class="grid-servicios">
-            <div class="servicio-item"><div class="icono" style="font-size:2.5rem;">🔑</div><h3>Apertura de puertas</h3></div>
-            <div class="servicio-item"><div class="icono" style="font-size:2.5rem;">🔒</div><h3>Cambio de cerraduras</h3></div>
-            <div class="servicio-item"><div class="icono" style="font-size:2.5rem;">🛠️</div><h3>Reparación de chapas</h3></div>
-            <div class="servicio-item"><div class="icono" style="font-size:2.5rem;">🚗</div><h3>Apertura de autos</h3></div>
-            <div class="servicio-item"><div class="icono" style="font-size:2.5rem;">🏢</div><h3>Cajas fuertes</h3></div>
-            <div class="servicio-item"><div class="icono" style="font-size:2.5rem;">🔩</div><h3>Ferretería general</h3></div>
+            <div class="servicio-item">🔑 Apertura de puertas</div>
+            <div class="servicio-item">🔒 Cambio de cerraduras</div>
+            <div class="servicio-item">🛠️ Reparación de chapas</div>
+            <div class="servicio-item">🚗 Apertura de autos</div>
+            <div class="servicio-item">🏢 Cajas fuertes</div>
+            <div class="servicio-item">🔩 Ferretería general</div>
+            <div class="servicio-item">📋 Asesoría en seguridad</div>
+            <div class="servicio-item">⚡ Instalaciones</div>
         </div>
     </div>
 
@@ -345,31 +504,24 @@
         </div>
         <div class="qr-container">
             <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://servillaves-ksr.netlify.app" alt="QR">
-            <p style="margin-top:8px;">📲 Escanee</p>
+            <p>📲 Guarde el contacto</p>
         </div>
     </div>
 
     <!-- FOOTER CON ANIMACIÓN -->
     <footer>
-        <p>© 2026 Servillaves K.S.R.</p>
+        <p>© 2026 Servillaves K.S.R. · Todos los derechos reservados</p>
         <p>Diseño con <span class="nge">NGE · Nueva Generación Emprendedora</span></p>
     </footer>
 </div>
 
-<!-- SCRIPT PARA MENÚ HAMBURGUESA -->
+<!-- SCRIPT MENÚ -->
 <script>
     const toggle = document.getElementById('menuToggle');
     const menu = document.getElementById('menuDesplegable');
-
-    toggle.addEventListener('click', () => {
-        menu.classList.toggle('active');
-    });
-
-    // Cerrar menú al hacer clic en un enlace (opcional)
+    toggle.addEventListener('click', () => menu.classList.toggle('active'));
     document.querySelectorAll('.menu-desplegable a').forEach(link => {
-        link.addEventListener('click', () => {
-            menu.classList.remove('active');
-        });
+        link.addEventListener('click', () => menu.classList.remove('active'));
     });
 </script>
 
