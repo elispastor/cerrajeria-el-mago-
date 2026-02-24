@@ -9,7 +9,6 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
         }
 
         body {
@@ -19,22 +18,23 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
+            font-family: 'Inter', 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         .tarjeta-digital {
             max-width: 1100px;
             width: 100%;
             background: #ffffff;
-            border-radius: 30px;
+            border-radius: 40px;
             overflow: hidden;
-            box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5);
+            box-shadow: 0 30px 50px -20px rgba(0,0,0,0.4);
             border: 1px solid #fbbf24;
         }
 
-        /* MENÚ HAMBURGUESA */
+        /* ===== MENÚ HAMBURGUESA ===== */
         header {
             background: linear-gradient(145deg, #0f172a, #1e293b);
-            padding: 15px 25px;
+            padding: 18px 30px;
             position: relative;
         }
 
@@ -44,18 +44,24 @@
             align-items: center;
         }
 
-        .logo-empresa span {
+        .logo-empresa {
             color: white;
-            font-weight: 700;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
         }
 
         .menu-toggle {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: #fbbf24;
             cursor: pointer;
             background: none;
             border: none;
+            transition: transform 0.2s;
+        }
+
+        .menu-toggle:hover {
+            transform: scale(1.1);
         }
 
         .menu-desplegable {
@@ -88,8 +94,9 @@
             color: white;
             text-decoration: none;
             font-size: 1.2rem;
+            font-weight: 500;
             padding: 10px 30px;
-            border-radius: 30px;
+            border-radius: 40px;
             transition: 0.2s;
         }
 
@@ -98,56 +105,59 @@
             color: #0f172a;
         }
 
-        /* ===== PORTADA CON IMAGEN ANIMADA ===== */
-        .portada-con-vida {
+        /* ===== PORTADA CON IMAGEN AJUSTADA ===== */
+        .portada-ajustada {
             width: 100%;
-            height: 400px;
-            position: relative;
+            height: 380px;
             overflow: hidden;
-            border-bottom: 4px solid #fbbf24;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fbbf24;
         }
 
-        .portada-con-vida img {
+        .portada-ajustada img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            object-position: center;
-            animation: zoomSuave 20s infinite alternate ease-in-out;
+            object-fit: contain;
+            animation: levitar 6s infinite alternate ease-in-out;
         }
 
-        @keyframes zoomSuave {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.1); }
+        @keyframes levitar {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-8px); }
         }
 
-        /* ===== BIENVENIDA CON MOVIMIENTO ===== */
-        .bienvenida {
+        /* ===== BIENVENIDA ELEGANTE ===== */
+        .bienvenida-elegante {
             text-align: center;
-            padding: 40px 20px 20px;
+            padding: 35px 20px 20px;
             background: white;
         }
 
-        .bienvenida h2 {
-            font-size: 3rem;
-            font-weight: 800;
+        .bienvenida-elegante h2 {
+            font-size: 2.4rem;
+            font-weight: 500;
             color: #0f172a;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            animation: brillo 2s infinite;
+            letter-spacing: 2px;
             display: inline-block;
-            padding: 10px 40px;
-            border-radius: 60px;
-            background: #fbbf24;
-            border: 3px solid #0f172a;
+            padding: 12px 45px;
+            background: #fef9e6;
+            border-radius: 70px;
+            border: 2px solid #fbbf24;
+            box-shadow: 0 8px 0 #e6a800;
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            animation: suave 3s infinite;
         }
 
-        @keyframes brillo {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 #fbbf24; }
-            50% { transform: scale(1.05); box-shadow: 0 0 30px 5px #fbbf24; }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 #fbbf24; }
+        @keyframes suave {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
         }
 
-        /* DIRECCIÓN Y BOTONES */
+        /* ===== DIRECCIÓN Y BOTONES ===== */
         .info-contacto {
             padding: 30px 35px;
             background: #f8fafc;
@@ -157,13 +167,14 @@
         .direccion-impacto {
             background: #0f172a;
             color: #fbbf24;
-            padding: 12px 25px;
-            border-radius: 40px;
-            font-size: 1.3rem;
-            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 500;
             display: inline-block;
             border: 2px solid #fbbf24;
             margin-bottom: 20px;
+            letter-spacing: 0.5px;
         }
 
         .telefonos-grid {
@@ -171,20 +182,21 @@
             gap: 15px;
             flex-wrap: wrap;
             justify-content: center;
-            margin: 20px 0;
+            margin: 25px 0;
         }
 
         .btn-wsp, .btn-llamada {
-            padding: 15px 30px;
-            border-radius: 40px;
+            padding: 14px 28px;
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 1.2rem;
+            font-weight: 600;
+            font-size: 1.1rem;
             display: inline-flex;
             align-items: center;
             gap: 8px;
             transition: 0.2s;
             border: 2px solid #fbbf24;
+            letter-spacing: 0.3px;
         }
 
         .btn-wsp {
@@ -201,7 +213,7 @@
             transform: scale(1.02);
         }
 
-        /* FILOSOFÍA CENTRADA */
+        /* ===== FILOSOFÍA CENTRADA Y PROPORCIONADA ===== */
         .filosofia {
             padding: 40px 35px;
             background: white;
@@ -210,11 +222,13 @@
 
         .filosofia h2 {
             color: #0f172a;
-            font-size: 2.2rem;
+            font-size: 2rem;
+            font-weight: 500;
             margin-bottom: 30px;
-            border-bottom: 4px solid #fbbf24;
+            border-bottom: 3px solid #fbbf24;
             display: inline-block;
             padding-bottom: 8px;
+            letter-spacing: 1px;
         }
 
         .grid-filosofia {
@@ -229,8 +243,8 @@
             flex: 1 1 250px;
             max-width: 300px;
             background: #f8fafc;
-            padding: 25px;
-            border-radius: 20px;
+            padding: 25px 20px;
+            border-radius: 25px;
             text-align: center;
             border: 2px solid #e2e8f0;
             transition: 0.2s;
@@ -242,13 +256,15 @@
 
         .filosofia-item h3 {
             color: #0f172a;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
+            font-weight: 500;
             margin-bottom: 15px;
         }
 
         .filosofia-item p {
-            color: #1e293b;
-            line-height: 1.6;
+            color: #334155;
+            line-height: 1.5;
+            font-size: 1rem;
         }
 
         .filosofia-item ul {
@@ -263,6 +279,8 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
+            font-size: 1rem;
+            color: #334155;
         }
 
         .filosofia-item li::before {
@@ -271,7 +289,7 @@
             font-weight: bold;
         }
 
-        /* SERVICIOS */
+        /* ===== SERVICIOS ===== */
         .servicios {
             padding: 40px 35px;
             background: #f8fafc;
@@ -280,9 +298,10 @@
 
         .servicios h2 {
             color: #0f172a;
-            font-size: 2.2rem;
+            font-size: 2rem;
+            font-weight: 500;
             margin-bottom: 30px;
-            border-bottom: 4px solid #fbbf24;
+            border-bottom: 3px solid #fbbf24;
             display: inline-block;
             padding-bottom: 8px;
         }
@@ -296,19 +315,21 @@
 
         .servicio-item {
             background: white;
-            padding: 20px 15px;
-            border-radius: 15px;
+            padding: 18px 12px;
+            border-radius: 20px;
             text-align: center;
             border: 2px solid #e2e8f0;
             transition: 0.2s;
             font-size: 1rem;
+            font-weight: 500;
+            color: #1e293b;
         }
 
         .servicio-item:hover {
             border-color: #fbbf24;
         }
 
-        /* CONTACTO Y QR */
+        /* ===== CONTACTO Y QR ===== */
         .contacto-qr {
             padding: 40px 35px;
             display: flex;
@@ -335,19 +356,24 @@
         }
 
         .nge {
-            font-weight: 800;
+            font-weight: 600;
             color: #fbbf24;
         }
 
         @media (max-width: 700px) {
-            .portada-con-vida {
+            .portada-ajustada {
                 height: 250px;
             }
-            .bienvenida h2 {
-                font-size: 2rem;
+            .bienvenida-elegante h2 {
+                font-size: 1.8rem;
+                padding: 10px 25px;
             }
             .grid-servicios {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            .contacto-qr {
+                flex-direction: column;
+                text-align: center;
             }
         }
     </style>
@@ -359,9 +385,7 @@
     <!-- MENÚ HAMBURGUESA -->
     <header>
         <div class="nav-container">
-            <div class="logo-empresa">
-                <span>SERVILLAVES K.S.R.</span>
-            </div>
+            <div class="logo-empresa">SERVILLAVES K.S.R.</div>
             <button class="menu-toggle" id="menuToggle">☰</button>
         </div>
         <div class="menu-desplegable" id="menuDesplegable">
@@ -375,17 +399,17 @@
         </div>
     </header>
 
-    <!-- PORTADA: SOLO LA IMAGEN CON MOVIMIENTO -->
-    <div class="portada-con-vida" id="inicio">
+    <!-- PORTADA CON IMAGEN AJUSTADA -->
+    <div class="portada-ajustada" id="inicio">
         <img src="portada.jpg" alt="Servillaves K.S.R.">
     </div>
 
-    <!-- BIENVENIDA CON MOVIMIENTO -->
-    <div class="bienvenida">
+    <!-- BIENVENIDA ELEGANTE -->
+    <div class="bienvenida-elegante">
         <h2>BIENVENIDOS A NUESTRO SITIO</h2>
     </div>
 
-    <!-- DIRECCIÓN -->
+    <!-- DIRECCIÓN Y TELÉFONOS -->
     <div class="info-contacto">
         <div class="direccion-impacto">📍 AVENIDA 5 #7-54 CENTRO</div>
         <div class="telefonos-grid">
