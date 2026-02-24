@@ -98,36 +98,22 @@
             color: #0f172a;
         }
 
-        /* ===== PORTADA (AHORA CON FONDO AMARILLO Y TEXTO) ===== */
+        /* ===== PORTADA CON IMAGEN INCRUSTADA (NUNCA FALLA) ===== */
         .portada-container {
             width: 100%;
-            height: 250px;
-            background: #fbbf24;  /* AMARILLO */
+            height: 280px;
+            background: #fbbf24;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             border-bottom: 4px solid #0f172a;
-            color: #0f172a;
-            text-align: center;
+            overflow: hidden;
         }
 
-        .portada-container h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            line-height: 1;
-            text-shadow: 2px 2px 0 #ffffff;
-        }
-
-        .portada-container p {
-            font-size: 1.8rem;
-            font-weight: 600;
-            background: #0f172a;
-            color: #fbbf24;
-            padding: 8px 30px;
-            border-radius: 50px;
-            margin-top: 15px;
+        .portada-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
 
         /* DIRECCIÓN Y BOTONES */
@@ -184,7 +170,7 @@
             transform: scale(1.02);
         }
 
-        /* MISIÓN, VISIÓN, VALORES */
+        /* ===== MISIÓN, VISIÓN, VALORES (CENTRADO) ===== */
         .filosofia {
             padding: 40px 35px;
             background: white;
@@ -204,6 +190,8 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 25px;
+            justify-items: center;
+            align-items: stretch;
             margin-top: 20px;
         }
 
@@ -215,6 +203,7 @@
             border: 2px solid #e2e8f0;
             transition: 0.2s;
             height: 100%;
+            width: 100%;
         }
 
         .filosofia-item:hover {
@@ -235,6 +224,8 @@
         .filosofia-item ul {
             list-style: none;
             text-align: left;
+            display: inline-block;
+            margin: 0 auto;
         }
 
         .filosofia-item li {
@@ -319,9 +310,6 @@
             .grid-filosofia, .grid-servicios {
                 grid-template-columns: 1fr;
             }
-            .portada-container h1 {
-                font-size: 2.5rem;
-            }
         }
     </style>
 </head>
@@ -348,13 +336,12 @@
         </div>
     </header>
 
-    <!-- PORTADA (FONDO AMARILLO - SIEMPRE SE VE) -->
+    <!-- PORTADA CON IMAGEN INCRUSTADA -->
     <div class="portada-container" id="inicio">
-        <h1>SERVILLAVES</h1>
-        <p>K.S.R.</p>
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCABkAGQDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//2Q==" alt="Servillaves K.S.R.">
     </div>
 
-    <!-- DIRECCIÓN CORREGIDA -->
+    <!-- DIRECCIÓN -->
     <div class="info-contacto">
         <div class="direccion-impacto">📍 AVENIDA 5 #7-54 CENTRO</div>
         <div class="telefonos-grid">
@@ -364,7 +351,7 @@
         </div>
     </div>
 
-    <!-- MISIÓN, VISIÓN, VALORES -->
+    <!-- FILOSOFÍA CENTRADA -->
     <div class="filosofia" id="filosofia">
         <h2>🔧 NUESTRA FILOSOFÍA</h2>
         <div class="grid-filosofia">
