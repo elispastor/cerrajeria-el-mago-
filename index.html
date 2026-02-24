@@ -98,7 +98,7 @@
             color: #0f172a;
         }
 
-        /* ===== PORTADA CON LOGO Y TÍTULO ===== */
+        /* ===== PORTADA CON SU IMAGEN (DESDE GITHUB) ===== */
         .portada-container {
             width: 100%;
             background: #fbbf24;
@@ -114,12 +114,20 @@
         .logo-area {
             flex: 1;
             text-align: center;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .logo-area img {
             max-width: 200px;
             max-height: 120px;
-            object-fit: contain;
+            width: auto;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            border: 3px solid #0f172a;
         }
 
         .titulo-cerrajeria {
@@ -373,10 +381,10 @@
         </div>
     </header>
 
-    <!-- PORTADA CON LOGO Y TÍTULO CERRAJERÍA -->
+    <!-- PORTADA CON SU IMAGEN (DESDE EL REPOSITORIO) -->
     <div class="portada-container" id="inicio">
         <div class="logo-area">
-            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCABkAGQDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//2Q==" alt="Servillaves K.S.R.">
+            <img src="portada.jpg" alt="Servillaves K.S.R. Logo">
         </div>
         <div class="titulo-cerrajeria">
             <h2>🔐 CERRAJERÍA</h2>
@@ -440,7 +448,7 @@
             <p><strong>⏰ Horario:</strong> Lunes a sábado 8am - 6pm</p>
         </div>
         <div class="qr-container">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://servillaves-ksr.netlify.app" alt="QR">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://cerrajeria-el-mago-.netlify.app" alt="QR">
             <p>📲 Guarde el contacto</p>
         </div>
     </div>
